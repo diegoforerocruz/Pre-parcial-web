@@ -1,35 +1,36 @@
-async function renderEvents() {
-    let eventos = [{
+let eventos = [{
 
-        "last_lane": "Daws",
-        
-        "first_name": "Nari",
-        
-        "email": "ndaws0@dell.com",
-        
-        "photo": "http://dummyimage.com/155x119.jpg/ff4444/ffffff"
-        
-        }, {
-        
-        "last_lane": "Withams",
-        
-        "first_name": "Winona",
-        
-        "email": "wwithams1@ibm.com",
-        
-        "photo": "http://dummyimage.com/161x166.bmp/cc0000/ffffff"
-        
-        }, {
-        
-        "last_lane": "Streatfield",
-        
-        "first_name": "Northrup",
-        
-        "email": "nstreatfield2@macromedia.com",
-        
-        "photo": "http://dummyimage.com/195x201.png/ff4444/ffffff"
-        
-        }]
+    "last_lane": "Daws",
+    
+    "first_name": "Nari",
+    
+    "email": "ndaws0@dell.com",
+    
+    "photo": "http://dummyimage.com/155x119.jpg/ff4444/ffffff"
+    
+    }, {
+    
+    "last_lane": "Withams",
+    
+    "first_name": "Winona",
+    
+    "email": "wwithams1@ibm.com",
+    
+    "photo": "http://dummyimage.com/161x166.bmp/cc0000/ffffff"
+    
+    }, {
+    
+    "last_lane": "Streatfield",
+    
+    "first_name": "Northrup",
+    
+    "email": "nstreatfield2@macromedia.com",
+    
+    "photo": "http://dummyimage.com/195x201.png/ff4444/ffffff"
+    
+    }]
+
+async function renderEvents() {
     let html = ''
     let cont = 1
     let htmlSegment = ''
@@ -97,3 +98,26 @@ function sortTable(param, column) {
       }
     }
   }
+
+function enviar() {
+      let obj = ({
+        "last_lane": document.getElementById("lastName").value,
+        
+        "first_name": document.getElementById("firstName").value,
+        
+        "email": document.getElementById("email").value,
+        
+        "photo": document.getElementById("photo").value
+      })  
+
+      document.getElementById("lastName").value = "" 
+      document.getElementById("firstName").value = ""
+      document.getElementById("email").value = ""
+      document.getElementById("photo").value = ""
+
+      eventos.push(obj)
+      console.log(eventos)
+      renderEvents()
+  }
+
+  console.log(eventos)
