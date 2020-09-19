@@ -133,10 +133,8 @@ function modificar(index) {
   }
 
 function borrar(a) {
-    console.log(a)
     table = document.getElementById("contentTable");
     table.deleteRow(a)
-    
   }
 
   console.log(eventos)
