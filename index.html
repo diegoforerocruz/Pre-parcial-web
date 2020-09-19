@@ -100,6 +100,7 @@
                         </span>
                     </th>
                     <th>Delete</th>
+                    <th>Modificar</th>
                 </tr>
                 
                 </thead>
@@ -139,55 +140,64 @@
                 </span>
               </form>
         </section>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
+
+
+    
+  
+     <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Actualizar datos de la fila</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                    <h5 class="modal-title" id="exampleModalLabel">Actualizar información Fila<strong id="filaAActualizar"></strong></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="modalActualizacion">
                     <form>
                         <div class="form-row">
                           <div class="form-group col-12 col-md-3">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastName">
+                            <label for="lastNameAct">Last Name</label>
+                            <input type="text" class="form-control" id="lastNameAct">
                           </div>
                           <div class="form-group col-12 col-md-3">
-                            <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName">
+                            <label for="firstNameAct">First Name</label>
+                            <input type="text" class="form-control" id="firstNameAct">
                           </div>
                           <div class="form-group col-12 col-md-3">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email">
+                            <label for="emailAct">Email</label>
+                            <input type="email" class="form-control" id="emailAct">
                           </div>
                           <div class="form-group col-12 col-md-3">
-                            <label for="photo">Photo</label>
-                            <input type="text" class="form-control" id="photo">
+                            <label for="photoAct">Photo</label>
+                            <input type="text" class="form-control" id="photoAct">
                           </div>
                         </div>
-                        <span>
-                            <button type="button" class="btn btn-light" onclick="enviar()">
-                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-arrow-right-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5A.5.5 0 0 0 4 8z"/>
-                                </svg>
-                            </button>
-                        </span>
                       </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="botonActualizar" class="btn btn-primary" onclick="actualizarFila()">Save changes</button>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
+
+
+
+
           
 
     </main>
     <script src="scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script>
+    $('#botonActualizar').click(function() {
+    $('#exampleModal').modal('hide');
+});
+</script>
 </body>
 </html>
