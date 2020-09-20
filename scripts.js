@@ -165,8 +165,16 @@ function actualizarFila() {
 }
 
 function borrar(a) {
-    table = document.getElementById("contentTable");
+    table = document.getElementById("contentTable")
     table.deleteRow(a)
   }
+
+function borrarTable() {
+    table = document.getElementById("contentTable")
+    while(table.rows.length!=1){
+        table.deleteRow(table.rows.length-1)
+    }
+    
+}
 
   console.log(eventos)
