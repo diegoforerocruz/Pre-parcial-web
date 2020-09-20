@@ -177,4 +177,36 @@ function borrarTable() {
     
 }
 
+function cambiarCards () {
+    let html = ''
+    let cont = 1
+    let htmlSegment = ''
+    let table
+    let rows
+    cont = 1
+    table = document.getElementById("contentTable");
+    rows = table.rows;
+    let i = 1
+    while(cont<table.rows.length){
+        htmlSegment =   `<div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text"><strong>Last Name: </strong>${table.rows[i].cells[0].innerHTML}</p>
+                                    <p class="card-text"><strong>Frist Name: </strong>${table.rows[i].cells[1].innerHTML}</p>
+                                    <p class="card-text"><strong>Email: </strong>${table.rows[i].cells[2].innerHTML}</p>
+                                    <p class="card-text"><strong>Photo: </strong>${table.rows[i].cells[3].innerHTML}</p>
+                                </div>
+                            </div>
+                        </div>`
+        
+        i++
+        cont ++
+        html += htmlSegment
+
+    }
+
+    let container = document.getElementById("cardsContent")
+    container.innerHTML = html
+}
+
   console.log(eventos)
